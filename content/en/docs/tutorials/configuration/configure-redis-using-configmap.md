@@ -11,7 +11,6 @@ weight: 30
 
 This tutorial provides a real-world example of how to configure [Redis](https://redis.io/docs/latest/) using a [ConfigMap](../../concepts/configuration/configmap.md) and builds on the [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/) task. 
 
-
 ## {{% heading "objectives" %}}
 
 * Create a ConfigMap with Redis configuration values.
