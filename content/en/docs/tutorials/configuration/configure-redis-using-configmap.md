@@ -21,7 +21,7 @@ This tutorial provides a real-world example of how to configure [Redis](https://
 
 {{< include "task-tutorial-prereqs.md" >}} {{< version-check >}}
 
-* The example shown on this page works with `kubectl` 1.14 and above.
+* The example on this page works with `kubectl` 1.14 and above.
 * Understand [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/).
 
 <!-- lessoncontent -->
