@@ -119,6 +119,8 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
 7. Check `maxmemory`:
 
+    **Note**: Remember to not include the `127.0.0.1:6379>` part of the prompt when copying and pasting the command to run.
+
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory
     ```
@@ -130,7 +132,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "0"
     ```
 
-8. Similarly, check `maxmemory-policy`:
+8. Check `maxmemory-policy`:
 
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory-policy
@@ -143,11 +145,19 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "noeviction"
     ```
 
-9. Add configuration values to the `example-redis-config` ConfigMap:
+9.  Add the highlighted configuration values to the `example-redis-config` ConfigMap:
 
     {{% code_sample file="pods/config/example-redis-config.yaml" %}}
 
-10.  Apply the updated ConfigMap:
+10. Apply the updated ConfigMap:
+
+    Exit the `redis-cli` interactive session:
+
+    ```
+    EXIT
+    ```
+
+    Then run:
 
     ```shell
     kubectl apply -f example-redis-config.yaml
@@ -194,7 +204,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "0"
     ```
 
-14. Similarly, check `maxmemory-policy` which remains at the `noeviction` default setting:
+14. Check `maxmemory-policy` which remains at the `noeviction` default setting:
 
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory-policy
@@ -210,6 +220,14 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     The configuration values have not changed because the Pod needs to be restarted to grab updated values from associated ConfigMaps. 
     
 15. Delete and recreate the Pod:
+
+    Exit the `redis-cli` interactive session:
+
+    ```
+    EXIT
+    ```
+
+    Then run:
 
     ```shell
     kubectl delete pod redis
@@ -249,6 +267,14 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     ```
 
 19. Clean up your work by deleting the created resources:
+
+    Exit the `redis-cli` interactive session:
+
+    ```
+    EXIT
+    ```
+
+    Then run:
 
     ```shell
     kubectl delete pod/redis configmap/example-redis-config
