@@ -224,7 +224,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     127.0.0.1:6379> CONFIG GET maxmemory
     ```
 
-    It should now return the updated value of 2097152:
+    It should now return the updated value of `2097152`:
 
     ```shell
     1) "maxmemory"
@@ -237,7 +237,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     127.0.0.1:6379> CONFIG GET maxmemory-policy
     ```
 
-    It now reflects the desired value of `allkeys-lru`:
+    It should now reflect the desired value of `allkeys-lru`:
 
     ```shell
     1) "maxmemory-policy"
