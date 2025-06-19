@@ -22,7 +22,7 @@ This tutorial provides a real-world example of how to configure [Redis](https://
 {{< include "task-tutorial-prereqs.md" >}} {{< version-check >}}
 
 * The example on this page works with `kubectl` 1.14 and above.
-* Understand [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/).
+* Understand [Configure a Pod to Use a ConfigMap](../../tasks/configure-pod-container/configure-pod-configmap.md).
 
 <!-- lessoncontent -->
 
@@ -52,7 +52,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/pods/config/redis-pod.yaml
     ```
 
-3. Run this command to examine the contents of the Redis pod manifest:
+3. Run this command to examine the contents of the Redis pod manifest YAML file:
 
     ```
     curl https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/pods/config/redis-pod.yaml
@@ -155,7 +155,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
     Exit the `redis-cli` interactive session:
 
-    ```
+    ```shell
     EXIT
     ```
 
@@ -193,7 +193,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     kubectl exec -it redis -- redis-cli
     ```
 
-    Then Repeat steps 7 and 8 to check `maxmemory` and `maxmemory-policy`.
+    Repeat steps 7 and 8 to check `maxmemory` and `maxmemory-policy`.
   
     The configuration values should *not* have changed because the Pod needs to be restarted to grab updated values from associated ConfigMaps. 
     
@@ -201,7 +201,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
     Exit the `redis-cli` interactive session:
 
-    ```
+    ```shell
     EXIT
     ```
 
@@ -248,7 +248,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
     Exit the `redis-cli` interactive session:
 
-    ```
+    ```shell
     EXIT
     ```
 
