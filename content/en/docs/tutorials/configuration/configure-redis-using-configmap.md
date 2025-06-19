@@ -145,7 +145,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "noeviction"
     ```
 
-9.  Add the highlighted configuration values to the `example-redis-config.yaml` ConfigMap:
+9. Add the highlighted configuration values to the `example-redis-config.yaml` ConfigMap:
 
     **Note**: Don't forget to include the `|` operator.
 
