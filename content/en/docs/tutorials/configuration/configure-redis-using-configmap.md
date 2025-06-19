@@ -9,7 +9,7 @@ weight: 30
 
 <!-- overview -->
 
-This tutorial provides a real-world example of how to configure [Redis](https://redis.io/docs/latest/) using a [ConfigMap](../../concepts/configuration/configmap.md) and builds on the [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/) task. 
+This tutorial provides a real-world example of how to configure [Redis](https://redis.io/docs/latest/) using a [ConfigMap](../../concepts/configuration/configmap.md) and builds on the [Configure a Pod to Use a ConfigMap](../../tasks/configure-pod-container/configure-pod-configmap.md) task. 
 
 ## {{% heading "objectives" %}}
 
@@ -119,7 +119,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
 7. Check `maxmemory`:
 
-    **Note**: Remember to not include the `127.0.0.1:6379>` part of the prompt when copying and pasting the command to run.
+    **Note**: Don't include the `127.0.0.1:6379>` part of the prompt when copying and pasting the command to run.
 
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory
