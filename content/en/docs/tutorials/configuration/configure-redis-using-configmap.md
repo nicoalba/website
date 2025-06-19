@@ -147,6 +147,8 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
 9.  Add the highlighted configuration values to the `example-redis-config` ConfigMap:
 
+    **Note**: Don't forget to include the `|` operator.
+
     {{% code_sample file="pods/config/example-redis-config.yaml" %}}
 
 10. Apply the updated ConfigMap:
@@ -191,35 +193,11 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     kubectl exec -it redis -- redis-cli
     ```
 
-13. Check `maxmemory`:
-   
-    ```shell
-    127.0.0.1:6379> CONFIG GET maxmemory
-    ```
-
-    It remains at the default value of 0:
-
-    ```shell
-    1) "maxmemory"
-    2) "0"
-    ```
-
-14. Check `maxmemory-policy` which remains at the `noeviction` default setting:
-
-    ```shell
-    127.0.0.1:6379> CONFIG GET maxmemory-policy
-    ```
-
-    Returns:
-
-    ```shell
-    1) "maxmemory-policy"
-    2) "noeviction"
-    ```
-
-    The configuration values have not changed because the Pod needs to be restarted to grab updated values from associated ConfigMaps. 
+13. Repeat steps 7 and 8 to check `maxmemory` and `maxmemory-policy`.
+  
+    The configuration values haven't changed because the Pod needs to be restarted to grab updated values from associated ConfigMaps. 
     
-15. Delete and recreate the Pod:
+14. Delete and recreate the Pod:
 
     Exit the `redis-cli` interactive session:
 
@@ -234,13 +212,13 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/pods/config/redis-pod.yaml
     ```
 
-16. Re-check the configuration values one last time:
+15. Re-enter the `redis-cli` interactive session to check the configuration values one last time:
 
     ```shell
     kubectl exec -it redis -- redis-cli
     ```
 
-17. Check `maxmemory`:
+16. Check `maxmemory`:
 
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory
@@ -253,7 +231,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "2097152"
     ```
 
-18. Similarly, check that `maxmemory-policy` has also been updated:
+17. Check that `maxmemory-policy` has also been updated:
 
     ```shell
     127.0.0.1:6379> CONFIG GET maxmemory-policy
@@ -266,7 +244,7 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
     2) "allkeys-lru"
     ```
 
-19. Clean up your work by deleting the created resources:
+18. Clean up your work by deleting the created resources:
 
     Exit the `redis-cli` interactive session:
 
