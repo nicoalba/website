@@ -260,5 +260,5 @@ Follow these steps to configure a Redis cache using data stored in a ConfigMap:
 
 ## {{% heading "whatsnext" %}}
 
-* Learn more about [ConfigMaps](/docs/tasks/configure-pod-container/configure-pod-configmap/).
-* Follow an example of [Updating configuration via a ConfigMap](/docs/tutorials/configuration/updating-configuration-via-a-configmap/).
+* Learn more about [ConfigMaps](../../tasks/configure-pod-container/configure-pod-configmap.md).
+* Follow an example of [Updating configuration via a ConfigMap](updating-configuration-via-a-configmap.md).
