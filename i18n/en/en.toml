@@ -661,7 +661,7 @@ other = "Your Kubernetes server must be version "
 other = "Your Kubernetes server must be at or later than version "
 
 [version_check_tocheck]
-other = "To check the version, enter "
+other = "Check the version by entering "
 
 [version_menu]
 other = "Versions"
