@@ -7,8 +7,6 @@ content_type: tutorial
 weight: 30
 ---
 
-<!-- overview -->
-
 This tutorial provides a real-world example of how to configure [Redis](https://redis.io/docs/latest/) using a [ConfigMap](../../concepts/configuration/configmap.md).
 
 ## {{% heading "objectives" %}}
@@ -23,8 +21,6 @@ This tutorial provides a real-world example of how to configure [Redis](https://
 
 * The example on this page works with `kubectl` 1.14 and above.
 * Ensure you understand how to [Configure a Pod to Use a ConfigMap](../../tasks/configure-pod-container/configure-pod-configmap.md).
-
-<!-- lessoncontent -->
 
 ## Real world example: Configure Redis using a ConfigMap
 
